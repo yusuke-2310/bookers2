@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Bookers2</title>
+    <script src="https://kit.fontawesome.com/7009cb25f2.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,19 +23,36 @@
       <ul class= "navbar-nav ml-auto">
        <% if user_signed_in? %>
         <li class="nav-link text-light">
+        <i class="fa-solid fa-house"></i>
+         <%= link_to "Home", user_path(current_user.id) %>
+        </li>
+        <li class="nav-link text-light">
+         <i class="fa-solid fa-users"></i>
          <%= link_to "Users", "/users" %>
         </li>
         <li class="nav-link text-light">
+         <i class="fa-solid fa-book-open"></i>
          <%= link_to "Books", "/books" %>
         </li>
         <li class="nav-link text-light">
+         <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </liv>
        <% else %>
         <li class="nav-link text-light">
+        <i class="fa-solid fa-house"></i>
+         <%= link_to "Home", "/" %>
+        </li>
+        <li class="nav-link text-light">
+         <i class="fa-solid fa-link"></i>
+         <%= link_to "About", "/top/about" %>
+        </li>
+        <li class="nav-link text-light">
+         <i class="fa-solid fa-user-plus"></i>
          <%= link_to "Sign up", new_user_registration_path %>
         </li>
         <li class="nav-link text-light">
+         <i class="fa-solid fa-right-to-bracket"></i>
          <%= link_to "Log in", new_user_session_path %>
         </li>
        <% end %>
@@ -45,7 +63,7 @@
    </header>
    <main>
    <p class="notice"><%= notice %></p>
-　　
+
    <%= yield %>
    </main>
    <footer>
@@ -54,10 +72,10 @@
       <div class= "mx-auto">
        <p>CopyRight Infratop.inc</p>
       </div>
-     </div> 
-    </div> 
+     </div>
+    </div>
    </footer>
-   
-    
+
+
   </body>
 </html>
