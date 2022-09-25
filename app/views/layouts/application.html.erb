@@ -23,37 +23,45 @@
       <ul class= "navbar-nav ml-auto">
        <% if user_signed_in? %>
         <li class="nav-link text-light">
-        <i class="fa-solid fa-house"></i>
-         <%= link_to "Home", user_path(current_user.id) %>
+         <%= link_to user_path(current_user.id) do %>
+          <i class="fas fa-home"></i>Home
+         <% end %>
         </li>
         <li class="nav-link text-light">
-         <i class="fa-solid fa-users"></i>
-         <%= link_to "Users", "/users" %>
+         <%= link_to "/users" do %>
+          <i class="fas fa-users"></i>Users
+         <% end %>
         </li>
         <li class="nav-link text-light">
-         <i class="fa-solid fa-book-open"></i>
-         <%= link_to "Books", "/books" %>
+         <%= link_to "/books" do %>
+          <i class="fas fa-book-open"></i>Books
+         <% end %>
         </li>
         <li class="nav-link text-light">
-         <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
-         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+         <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fas fa-sign-out-alt"></i>Log out
+         <% end %>
         </liv>
        <% else %>
         <li class="nav-link text-light">
-        <i class="fa-solid fa-house"></i>
-         <%= link_to "Home", "/" %>
+         <%= link_to "/" do %>
+          <i class=" fas fa-home"></i>Home
+         <% end %>
         </li>
         <li class="nav-link text-light">
-         <i class="fa-solid fa-link"></i>
-         <%= link_to "About", "/top/about" %>
+         <%= link_to "/home/about" do %>
+          <i class=" fas fa-link"></i>About
+         <% end %>
         </li>
         <li class="nav-link text-light">
-         <i class="fa-solid fa-user-plus"></i>
-         <%= link_to "Sign up", new_user_registration_path %>
+         <%= link_to new_user_registration_path do %>
+          <i class=" fas fa-user-plus"></i>Sign up
+         <% end %>
         </li>
         <li class="nav-link text-light">
-         <i class="fa-solid fa-right-to-bracket"></i>
-         <%= link_to "Log in", new_user_session_path %>
+         <%= link_to new_user_session_path do %>
+          <i class=" fas fa-sign-in-alt"></i>Log in
+         <% end %>
         </li>
        <% end %>
       </ul>

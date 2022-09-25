@@ -5,13 +5,12 @@
     <div class= "row">
      <div class= "col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
       <h2>Log in</h2>
-      <form action= "/user/sign_in" accept-charset= "UTF-8" method= "post">
       <div class="field">
-       <%= f.label :email %><br />
-       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+       <%= f.label :name %><br/>
+       <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
       </div>
       <div class="field">
-       <%= f.label :password %><br />
+       <%= f.label :password %><br/>
        <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
       <% if devise_mapping.rememberable? %>
@@ -24,9 +23,8 @@
       <%= f.submit "Log in" %>
       </div>
       <%= render "devise/shared/links" %>
-      </form>
      </div>
-     
+
     </div>
    </div>
 <% end %>
